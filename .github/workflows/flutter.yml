@@ -17,5 +17,6 @@ jobs:
         flutter-version: '1.9.1+hotfix.6'
     - run: flutter pub get
     - run: flutter test
-    - run: flutter create android
+    - run: flutter create .
+    - run: rm test/widget_test.dart
     - run: flutter build apk --target-platform android-arm,android-arm64 --split-per-abi
