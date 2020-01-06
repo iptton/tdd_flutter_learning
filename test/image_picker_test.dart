@@ -7,13 +7,28 @@ void main() {
     await tester.pumpWidget(Builder(builder: (BuildContext context) {
       return MaterialApp(
         builder: (context, child) {
-          return showImagePickerBottomSheet(context);
+          return imagePickerMenu(context);
         },
       );
     }));
 
     expect(find.byType(BottomSheet), findsOneWidget);
-    expect(find.text("Choose from gallery"), findsOneWidget);
-    expect(find.text("Take a new picture"), findsOneWidget);
+    expect(find.text(kChooseFromGallery), findsOneWidget);
+    expect(find.text(kTakeANewPitcure), findsOneWidget);
+  });
+
+  testWidgets("check icons", (tester) async {
+    await tester.pumpWidget(
+      Builder(
+        builder: (ctx) => MaterialApp(
+          builder: (ctx, child) {
+            return imagePickerMenu(ctx);
+          },
+        ),
+      ),
+    );
+
+    expect(find.byIcon(Icons.photo_camera), findsOneWidget);
+    expect(find.byIcon(Icons.photo_library), findsOneWidget);
   });
 }
