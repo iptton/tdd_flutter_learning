@@ -26,4 +26,4 @@ jobs:
         # Artifact name
         name: apks
         # Directory containing files to upload
-        path: build/app/outputs/apk/release/app-*.apk
+        path: build/app/outputs/apk/release/app-armeabi-v7a-release.apk
