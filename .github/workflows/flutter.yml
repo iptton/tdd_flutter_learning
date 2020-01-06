@@ -20,3 +20,16 @@ jobs:
     - run: flutter create android
     - run: flutter build apk --target-platform android-arm,android-arm64 --split-per-abi
     - run: flutter test --coverage
+     - name: Codecov
+       uses: codecov/codecov-action@v1.0.5
+       with:
+         # User defined upload name. Visible in Codecov UI
+         name: coverage
+         # Repository upload token - get it from codecov.io
+         token: ${{secrets.CODECOV_TOKEN}}
+         # Path to coverage file to upload
+         file: ./coverage/lcov.info
+         # Flag upload to group coverage metrics (e.g. unittests | integration | ui,chrome)
+         flags: unittests# optional
+         # Specify whether or not CI build should fail if Codecov runs into an error during upload
+         fail_ci_if_error: false # optional
