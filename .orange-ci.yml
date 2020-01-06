@@ -1,11 +1,11 @@
 master:
   push:
-    - network: idc-kvm
+    - services:
+      - network:
       docker:
         kvm: true
         # 编译环境，此docker需要定制
         image: csighub.tencentyun.com/docker-build/android-docker:latest
-    - services:
       - github-actions
       stages:
         - uses: actions/checkout@v1
