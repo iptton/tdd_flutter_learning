@@ -1,0 +1,23 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Flutter CLI
+      uses: steebchen/flutter@v1.0.0
+    - run: flutter create .
+    - run: rm test/widget_test.dart
+    - run: flutter build apk
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: apks
+        # Directory containing files to upload
+        path: build/app/outputs/apk/release/app-*.apk
