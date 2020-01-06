@@ -20,34 +20,6 @@ Widget imagePickerMenu(BuildContext context) {
           leading: Icon(Icons.photo_camera),
           title: Text(kTakeANewPitcure),
         ),
-        ListTile(
-          leading: Icon(Icons.photo_camera),
-          title: Text(kTakeANewPitcure),
-        ),
-        ListTile(
-          leading: Icon(Icons.photo_camera),
-          title: Text(kTakeANewPitcure),
-        ),
-        ListTile(
-          leading: Icon(Icons.photo_camera),
-          title: Text(kTakeANewPitcure),
-        ),
-        ListTile(
-          leading: Icon(Icons.photo_camera),
-          title: Text(kTakeANewPitcure),
-        ),
-        ListTile(
-          leading: Icon(Icons.photo_camera),
-          title: Text(kTakeANewPitcure),
-        ),
-        ListTile(
-          leading: Icon(Icons.photo_camera),
-          title: Text(kTakeANewPitcure),
-        ),
-        ListTile(
-          leading: Icon(Icons.photo_camera),
-          title: Text(kTakeANewPitcure),
-        ),
       ],
     ),
   );
